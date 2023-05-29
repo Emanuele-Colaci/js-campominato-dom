@@ -3,6 +3,9 @@ let main = document.getElementById('main');
 let button_easy = document.getElementById('play');
 let gameEnded = false;
 let messaggio = document.getElementById('messaggio');
+let punteggio = document.getElementById('punteggio');
+let bombe = [];
+let score = 0;
 
 function blocco1(){
     let square = document.createElement('div');
@@ -41,6 +44,16 @@ function gameOver() {
         squares[i].removeEventListener('click', function(){});
     }
 }
+
+function revealAllBombs() {
+    let squares = container.getElementsByClassName('square');
+    for (let i = 0; i < squares.length; i++) {
+        let number = parseInt(squares[i].innerText);
+        if (bombe.includes(number)) {
+        squares[i].style.backgroundColor = 'red';
+        }
+    }
+}
   
 
 button_easy.addEventListener('click', function(){
@@ -48,7 +61,10 @@ button_easy.addEventListener('click', function(){
     container.innerHTML= '';
     console.log('difficolta:' + difficolta)
     main.classList.remove('d-none');
-    let bombe = [];
+    messaggio.innerHTML = '';
+    gameEnded = false;
+    score = 0;
+    punteggio.innerHTML = 'Punteggio: ' + score;
     if(difficolta === '1'){
         for(let i = 0; i < 100; i++){
             
@@ -60,9 +76,12 @@ button_easy.addEventListener('click', function(){
                 if(bombe.includes(parseInt(this.innerText))) {
                     this.style.backgroundColor = 'red';
                     messaggio.append('Bomba calpestata!');
+                    revealAllBombs();
                     gameOver();
                 }else{
                     this.style.backgroundColor = 'rgb(7, 151, 247)';
+                    score++;
+                    punteggio.innerHTML = 'Punteggio: ' + score;
                     console.log(this.innerText);
                 }
             }  
@@ -82,9 +101,12 @@ button_easy.addEventListener('click', function(){
                 if(bombe.includes(parseInt(this.innerText))) {
                     this.style.backgroundColor = 'red';
                     messaggio.append('Bomba calpestata!');
+                    revealAllBombs();
                     gameOver();
                 }else{
                     this.style.backgroundColor = 'rgb(7, 151, 247)';
+                    score++;
+                    punteggio.innerHTML = 'Punteggio: ' + score;
                     console.log(this.innerText);
                 }
             }  
@@ -102,9 +124,12 @@ button_easy.addEventListener('click', function(){
                 if(bombe.includes(parseInt(this.innerText))) {
                     this.style.backgroundColor = 'red';
                     messaggio.append('Bomba calpestata!');
+                    revealAllBombs();
                     gameOver();
                 }else{
                     this.style.backgroundColor = 'rgb(7, 151, 247)';
+                    score++;
+                    punteggio.innerHTML = 'Punteggio: ' + score;
                     console.log(this.innerText);
                 }
             }  
