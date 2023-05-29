@@ -69,10 +69,6 @@ main{
     height: calc(100% / 7);
     width: calc(100% / 7);
 }
-
-.clicked{
-    background-color: rgb(7, 151, 247);
-}
 /* FINE MAIN */
 
 /* FOOTER */
