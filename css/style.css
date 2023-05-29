@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+
+header{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img{
+    margin: 0 10px;
+    height: 100%;
+    vertical-align: middle;
+}
+
+header button{
+    margin: 0 10px;
+    padding: 0 40px;
+}
+
+header select{
+    padding: 0 40px 0 0;
+}
+
+/* FINE HEADER */
+
+/* MAIN */
+main{
+    background-color: #7fffd4;
+}
+
+.d-none{
+    display: none;
+}
+
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    height: 40rem;
+    width: 70%;   
+}
+
+.square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+}
+
+.square1{
+    height: calc(100% / 10);
+    width: calc(100% / 10);
+}
+
+.square2{
+    height: calc(100% / 9);
+    width: calc(100% / 9);
+}
+
+.square3{
+    height: calc(100% / 7);
+    width: calc(100% / 7);
+}
+
+.clicked{
+    background-color: rgb(7, 151, 247);
+}
+/* FINE MAIN */
+
+/* FOOTER */
+footer{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+footer p{
+    margin: 10px;
+}
+
+.fa-heart{
+    font-size: 13px;
+}
+/* FINE FOOTER */
+
+@media screen and (max-width: 600px){
+    h1{
+        font-size: 0.9rem;
+    }
+
+    header button, header select, header span{
+        padding: 0;
+        font-size: 0.6rem;
+    }
+}
+
+@media screen and (max-width: 350px){
+    header span{
+        display: none;
+    }
+}
