@@ -5,6 +5,7 @@ let gameEnded = false;
 let messaggio = document.getElementById('messaggio');
 let punteggio = document.getElementById('punteggio');
 let bombe = [];
+let caselleCliccate = [];
 let score = 0;
 
 function blocco1(){
@@ -73,6 +74,9 @@ button_easy.addEventListener('click', function(){
             
             square.addEventListener('click', function(){
             if (!gameEnded) {
+                if (caselleCliccate.includes(this)) {
+                    return;
+                }
                 if(bombe.includes(parseInt(this.innerText))) {
                     this.style.backgroundColor = 'red';
                     messaggio.append('Bomba calpestata!');
@@ -83,6 +87,7 @@ button_easy.addEventListener('click', function(){
                     score++;
                     punteggio.innerHTML = 'Punteggio: ' + score;
                     console.log(this.innerText);
+                    caselleCliccate.push(this);
                 }
             }  
             })
@@ -98,6 +103,9 @@ button_easy.addEventListener('click', function(){
             
             square.addEventListener('click', function(){
             if (!gameEnded) {
+                if (caselleCliccate.includes(this)) {
+                    return;
+                }
                 if(bombe.includes(parseInt(this.innerText))) {
                     this.style.backgroundColor = 'red';
                     messaggio.append('Bomba calpestata!');
@@ -108,6 +116,7 @@ button_easy.addEventListener('click', function(){
                     score++;
                     punteggio.innerHTML = 'Punteggio: ' + score;
                     console.log(this.innerText);
+                    caselleCliccate.push(this);
                 }
             }  
             })
@@ -121,6 +130,9 @@ button_easy.addEventListener('click', function(){
             
             square.addEventListener('click', function(){
             if (!gameEnded) {
+                if (caselleCliccate.includes(this)) {
+                    return;
+                }
                 if(bombe.includes(parseInt(this.innerText))) {
                     this.style.backgroundColor = 'red';
                     messaggio.append('Bomba calpestata!');
@@ -131,6 +143,7 @@ button_easy.addEventListener('click', function(){
                     score++;
                     punteggio.innerHTML = 'Punteggio: ' + score;
                     console.log(this.innerText);
+                    caselleCliccate.push(this);
                 }
             }  
             })
